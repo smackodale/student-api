@@ -17,7 +17,7 @@ export interface IStudent {
 }
 
 export const StudentSchema = new Schema({
-  studentIdentifier: { type: String, index: true },
+  studentIdentifier: { type: String, index: true, unique: true },
   familyName: String,
   givenNames: String,
   gender: String,
