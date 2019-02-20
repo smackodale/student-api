@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, SchemaTypeOpts } from 'mongoose';
 
-export const StudentSchema = new Schema({
+export interface IStudent {
   studentIdentifier: String,
   familyName: String,
   givenNames: String,
@@ -9,7 +9,23 @@ export const StudentSchema = new Schema({
   rollClass: String,
   house: String,
   attendance: Number,
-  imageUrl: String,
+  image: Buffer,
+  results: [{
+    subject: String,
+    achievement: String
+  }]
+}
+
+export const StudentSchema = new Schema({
+  studentIdentifier: { type: String, index: true },
+  familyName: String,
+  givenNames: String,
+  gender: String,
+  yearLevel: Number,
+  rollClass: String,
+  house: String,
+  attendance: Number,
+  image: Buffer,
   results: [{
     subject: String,
     achievement: String
