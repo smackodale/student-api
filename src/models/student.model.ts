@@ -1,4 +1,4 @@
-import { Schema, model, SchemaTypeOpts } from 'mongoose';
+import { model, Schema } from 'mongoose';
 
 export interface IStudent {
   studentIdentifier: String,
@@ -9,7 +9,7 @@ export interface IStudent {
   rollClass: String,
   house: String,
   attendance: Number,
-  image: Buffer,
+  image: String,
   results: [{
     subject: String,
     achievement: String
@@ -25,7 +25,7 @@ export const StudentSchema = new Schema({
   rollClass: String,
   house: String,
   attendance: Number,
-  image: Buffer,
+  image: String,
   results: [{
     subject: String,
     achievement: String
