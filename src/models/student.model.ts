@@ -8,11 +8,14 @@ export interface IStudent {
   yearLevel: Number,
   rollClass: String,
   house: String,
+  indigenous: Boolean;
+  disabilities: Boolean;
   attendance: Number,
   image: String,
   results: [{
     subject: String,
-    achievement: String
+    achievement: String,
+    previousAchievement: String
   }]
 }
 
@@ -24,11 +27,14 @@ export const StudentSchema = new Schema({
   yearLevel: Number,
   rollClass: String,
   house: String,
+  indigenous: Boolean,
+  disabilities: Boolean,
   attendance: Number,
   image: String,
   results: [{
     subject: String,
-    achievement: String
+    achievement: String,
+    previousAchievement: String
   }]
 });
 
