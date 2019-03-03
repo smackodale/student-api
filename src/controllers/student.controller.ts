@@ -33,7 +33,18 @@ export class StudentController {
   }
 
   public deleteStudent(req: Request, res: Response) {
-    Student.remove({ studentIdentifier: req.params.studentId }, (err) => {
+    Student.deleteOne({ studentIdentifier: req.params.studentId }, (err) => {
+      if (err) {
+        res.send(err);
+      }
+
+      res.status(200);
+      res.send();
+    });
+  }
+
+  public deleteAllStudents(req: Request, res: Response) {
+    Student.deleteMany({}, (err) => {
       if (err) {
         res.send(err);
       }

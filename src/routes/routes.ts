@@ -7,7 +7,8 @@ export class Routes {
   public routes(app: Application): void {
     app.route('/students')
       .get(this.studentController.getAllStudents)
-      .post(this.studentController.saveStudents);
+      .post(this.studentController.saveStudents)
+      .delete(this.studentController.deleteAllStudents);
     app.route('/students/:studentId').delete(this.studentController.deleteStudent);
   }
 }
