@@ -1,7 +1,6 @@
-import { Schema, model, ModelUpdateOptions } from 'mongoose';
-import { Student, IStudent } from '../models/student.model';
 import { Request, Response } from 'express';
-import { UnorderedBulkOperation, BulkWriteResult, MongoError } from 'mongodb';
+import { BulkWriteResult, MongoError, UnorderedBulkOperation } from 'mongodb';
+import { IStudent, Student } from '../models/student.model';
 
 export class StudentController {
 
