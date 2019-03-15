@@ -19,9 +19,9 @@ class App {
 
     private config(): void {
         // support application/json type post data
-        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.json({ limit: "10mb" }));
         //support application/x-www-form-urlencoded post data
-        this.app.use(bodyParser.urlencoded({ extended: false }));
+        this.app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 
         this.app.use(function (req, res, next) {
             res.header("Access-Control-Allow-Origin", "*");
